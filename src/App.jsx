@@ -11,9 +11,8 @@ function App() {
   }
 
   function handleAddTodos(newTodo) {
-    const newTodoList = [...todos, newTodo]
-    persistData(newTodoList)
-    setTodos(newTodoList)
+    const newTodoList = todos
+    setTodos(newTodoList.push(newTodo))
   }
 
   function handleDeleteTodo(index) {
@@ -40,7 +39,6 @@ function App() {
       return
     }
 
-    console.log(localTodos)
     localTodos = JSON.parse(localTodos).todos
     setTodos(localTodos)
 
