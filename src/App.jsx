@@ -11,8 +11,9 @@ function App() {
   }
 
   function handleAddTodos(newTodo) {
-    const newTodoList = todos
-    setTodos(newTodoList.push(newTodo))
+    const newTodoList = [...todos, newTodo]
+    persistData(newTodoList)
+    setTodos(newTodoList)
   }
 
   function handleDeleteTodo(index) {
